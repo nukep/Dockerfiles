@@ -1,22 +1,19 @@
-FROM nukep/debian-openjdk7
+FROM jeanblanchard/busybox-java
 
 MAINTAINER Dan Spencer <dan@atomicpotato.net>
 
-RUN apt-get update \
-    && apt-get install -y wget
-    && apt-get clean
-
 ENV VERSION 1.8
-COPY install.sh /install.sh
-RUN /install.sh
+
+RUN curl -o minecraft_server.jar http://s3.amazonaws.com/Minecraft.Download/versions/$VERSION/minecraft_server.$VERSION.jar
 
 COPY start.sh /start.sh
 
 VOLUME '/data'
 WORKDIR /data
 
-RUN useradd minecraft && chown minecraft:minecraft /data
+ENV JVM_OPTS -Xmx1024M -Xms1024M
+
+RUN adduser -H -D minecraft && chown minecraft:minecraft /data
 USER minecraft
 EXPOSE 25565
 CMD ["/start.sh"]
-

@@ -51,3 +51,7 @@ If the Docker container is running in the background, attach it with:
 
 If you want to exit and keep the server running, enter the escape sequence
 `Ctrl+P, Ctrl+Q`. This will deattach you from the Docker container.
+
+## Backing Up World
+
+It is probably a good idea to keep backups of your world save. You can do this without stopping the server container by temporarily disabling world saving. There is an example Ruby script to do this [here](https://gist.github.com/audy/e04f617f6ba2ae045b04).

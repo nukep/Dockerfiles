@@ -54,4 +54,7 @@ If you want to exit and keep the server running, enter the escape sequence
 
 ## Backing Up World
 
-It is probably a good idea to keep backups of your world save. You can do this without stopping the server container by temporarily disabling world saving. There is an example Ruby script to do this [here](https://gist.github.com/audy/e04f617f6ba2ae045b04).
+It is probably a good idea to keep backups of your world saved.
+You can do this without stopping the server container by temporarily disabling
+world saving.
+There is an example Ruby script to do this [here](https://gist.github.com/audy/e04f617f6ba2ae045b04).
